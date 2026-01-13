@@ -1,6 +1,7 @@
 services:
   - type: web
-    name: flask-quiz
+    name: flask-app
     env: python
+    plan: free
     buildCommand: ""
-    startCommand: "python app.py"
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
