@@ -1,7 +1,7 @@
 services:
   - type: web
-    name: flask-app
+    name: flask-poetry-app
     env: python
     plan: free
-    buildCommand: ""
-    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    buildCommand: poetry install
+    startCommand: poetry run gunicorn app:app --bind 0.0.0.0:10000
